@@ -20,8 +20,8 @@ On each each correct selection, the score will increase; and in wrong answers, t
 At the end, score will be given out of 8.
 
 
-## Link to Games: 
-
+## Link to Games Center: 
+https://nalghamdi.github.io/Project1/
 
 ## Technologies Used 
 * HTML 
