@@ -1,0 +1,845 @@
+/* to remove the scrolling bar */
+::-webkit-scrollbar {
+    width: 0px;  
+    background: transparent;  
+}
+
+.heading{
+	position: absolute;
+	top: 120px;
+	left:40px;
+}
+.title {
+	font-size: 72px;
+	background: -webkit-linear-gradient(#e57373, #9E9990);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: left;
+	font-family: 'Righteous', 'cursive';
+	font-size: 70px;
+	font-weight: bolder;
+  }
+
+  .typeWords{
+position: absolute;
+top:390px;
+left:60px;
+  }
+  .typewrite{
+	  text-decoration: none;
+	  color:rgb(187,207,195);
+	  font-size: 24px;
+	  font-family: 'Arima Madurai', 'cursive';
+
+  }
+
+body{
+	margin:0;
+	padding: 0;
+}
+#wrapper {
+	background: transparent;
+    height: 750px;
+    width: 7000px;
+	/* overflow: hidden; */
+	margin: 0;
+}
+
+#top-panel {
+    /* z-index:0; */
+    position:relative;
+    background:rgb(244,212,202);
+    background:-moz-linear-gradient(top, rgba(244,212,202,1) 0%, rgba(255,255,236,1) 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,212,202,1)), color-stop(100%,rgba(255,255,236,1)));
+    background:-webkit-linear-gradient(top, rgba(244,212,202,1) 0%,rgba(255,255,236,1) 100%);
+    background:-o-linear-gradient(top, rgba(244,212,202,1) 0%,rgba(255,255,236,1) 100%);
+    background:-ms-linear-gradient(top, rgba(244,212,202,1) 0%,rgba(255,255,236,1) 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4e5d9', endColorstr='#ffffff',GradientType=0 );
+    background:linear-gradient(top, rgba(244,212,202,1) 0%,rgba(255,255,236,1) 100%);
+    height:680px;
+    width:7000px;
+}
+
+#bottom-panel {
+    z-index:1;
+    position:relative;
+    height:115px;
+    width:7000px;
+    background-image: linear-gradient(#C9BBA3,#d7ccc8 );
+    margin:0;
+    border-top: 30px solid #9E9990;
+}
+
+.car {
+    position: fixed;
+    top:520px;
+    width: 1000px;
+    height: 200px;
+    background-image: url('bear-car.png');
+    z-index:2;
+    background-size: 500px 200px;
+    background-repeat: no-repeat;
+}
+
+
+#background-wrap {
+    top: 10;
+	left: 0;
+	padding-top: 50px;
+	position: fixed;
+	right: 0;
+    top: 0
+	/* z-index: -1; */
+}
+
+
+#clouds{
+
+position: absolute;
+top:150px;
+left:2000px;
+	
+}
+#clouds2{
+	top:150px;
+    position: absolute;
+    left:5000px;
+        
+    }
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; 
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; 
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; 
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; 
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+.tree1, .tree2 , .tree3{
+    background-image: url('tree.png');
+    z-index: 1;
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    z-index:1;
+    background-size: 100px 150px;
+    background-repeat: no-repeat;
+}
+.tree1{
+  left:40px; 
+  bottom:30px 
+}
+.tree2{
+    left:5600px;  
+    bottom:30px;
+  }
+  .tree3{
+	left:1500px;  
+	bottom:30px;
+  }
+
+  
+
+.bridge{
+    background-image: url(bridge1.png);
+    z-index: 2;
+    position: absolute;
+    width: 800px;
+    height: 290px;
+    z-index: 1;
+    background-size: 500px 400px;
+    background-repeat: no-repeat;
+    left: 4780px;
+    bottom: 20px;
+    margin: 0;
+ 
+}
+
+.waves{
+	background-image: url('wave.gif');
+	background-color: rgba(255,255,236,1) ;
+    position: absolute;
+    /* z-index: 1; */
+    width: 360px;
+    height: 130px;
+    background-size: 500px 250px;
+    background-repeat: no-repeat;
+    left: 4855px;
+    bottom: 40px;
+    margin: 0;
+}
+
+.plane{
+	background-image: url('https://png2.kisspng.com/20180304/uww/kisspng-airplane-red-cartoon-red-cartoon-airplane-5a9bc2e51cd8e6.1079250915201574131182.png');
+	z-index: 1;
+	position: absolute;
+    width: 480px;
+    height: 100px;
+    background-size: 400px 100px;
+	background-repeat: no-repeat;
+	left:900px;
+	top:30px;
+}
+
+
+.hill1{
+	background-image: url('hill-1.png');
+    position: absolute;
+    z-index: 1;
+    width: 700px;
+    height: 270px;
+    background-size: 700px 300px;
+    background-repeat: no-repeat;
+    left: 2650px;
+    bottom: 0px;
+    margin: 0;
+}
+
+.bearIcon{
+	background-image: url('bear-ice.gif');
+    position: absolute;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    left: 3050px;
+    top:360px;
+    margin: 0;
+}
+
+.bearGame{
+	position: absolute;
+    width: 300px;
+	height: 80px;
+	z-index: 1;
+    left: 2960px;
+    top:460px;
+	margin: 0;
+	text-align: center;
+	font-family: 'Arima Madurai', cursive;
+	color:#e57373;
+
+}
+
+.bearGame p {
+	font-family: 'Arima Madurai', cursive;
+	color:rgb(102,127,139);
+}
+
+
+
+.hill2{
+	background-image: url('hill-2.png');
+    position: absolute;
+    /* z-index: 1; */
+    width: 700px;
+    height: 400px;
+    background-size: 700px 400px;
+    background-repeat: no-repeat;
+    left: 3150px;
+    bottom: 0px;
+    margin: 0;
+}
+
+.paintIcon{
+	background-image: url('painting.gif');
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    left: 3450px;
+    top:210px;
+    margin: 0;
+}
+
+.paintingGame{
+	position: absolute;
+    width: 300px;
+	height: 80px;
+	z-index: 1;
+    left: 3350px;
+    top:360px;
+	margin: 0;
+	text-align: center;
+	font-family: 'Arima Madurai', cursive;
+	color:#e57373;
+	
+
+}
+
+.paintingGame p {
+	font-family: 'Arima Madurai', cursive;
+	color:rgb(102,127,139);
+}
+
+.kidsIcon{
+	background-image: url('children.gif');
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    left: 3850px;
+    top:340px;
+	margin: 0;
+	z-index: 1;
+}
+
+.emotionsGame{
+	position: absolute;
+    width: 300px;
+	height: 80px;
+	z-index: 1;
+    left: 3750px;
+    top:460px;
+	margin: 0;
+	text-align: center;
+	font-family: 'Arima Madurai', cursive;
+	color:#e57373;
+
+}
+
+.sun{
+	background-image: url('sun.gif');
+	position: absolute;
+    left: 6300px;
+    top:60px;
+	margin: 0;
+	width: 100px;
+    height: 200px;
+    z-index:1;
+    background-size: 100px 150px;
+    background-repeat: no-repeat;
+}
+
+.love{
+	background-image: url('heart.png');
+	position: absolute;
+    left: 6100px;
+    top:450px;
+	margin: 0;
+	width: 80px;
+    height: 80px;
+    z-index:1;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+}
+
+.end h2{
+	position: absolute;
+    left: 5960px;
+	top:460px;
+	font-family: 'Emilys Candy', cursive;
+	color: rgb(187,208,195);
+}
+
+.designer h2{
+	position: absolute;
+    left: 6200px;
+	top:460px;
+	font-family: 'Emilys Candy', cursive;
+	color: rgb(187,208,195);
+}
+
+
+.emotionsGame p {
+	font-family: 'Arima Madurai', cursive;
+	color:rgb(102,127,139);
+}
+
+.hill3{
+	background-image: url('hill-3.png');
+    position: absolute;
+    z-index: 1;
+    width: 700px;
+    height: 270px;
+    background-size: 700px 300px;
+    background-repeat: no-repeat;
+    left: 3650px;
+    bottom: 0px;
+    margin: 0;
+}
+
+.hill4{
+	background-image: url('hill-5.png');
+    position: absolute;
+     z-index: 3; 
+    width: 1300px;
+    height: 200px;
+    background-size: 1300px 250px;
+    background-repeat: no-repeat;
+    left: 750px;
+    bottom: 0px;
+	margin: 0;
+}
+
+
+
+.mountain1{
+	background-image: url('mountain-2.png');
+    position: absolute;
+      
+    width: 700px;
+    height: 350px;
+    background-size: 700px 450px;
+    background-repeat: no-repeat;
+    left: 1050px;
+    bottom: 0px;
+	margin: 0;
+}
+.mountain2{
+	background-image: url('mountain-3.png');
+    position: absolute;
+     z-index: 1; 
+    width: 700px;
+    height: 350px;
+    background-size: 700px 450px;
+    background-repeat: no-repeat;
+    left: 1300px;
+    bottom: 0px;
+	margin: 0;
+}
+
+.mountain3{
+	background-image: url('mountain-1.png');
+    position: absolute;
+     z-index: 1; 
+    width: 400px;
+    height: 150px;
+    background-size: 400px 250px;
+    background-repeat: no-repeat;
+    left: 1300px;
+    bottom: 0px;
+	margin: 0;
+}
+
+.house1{
+	background-image: url('house-1.png');
+    position: absolute;
+     z-index: 2; 
+    width: 150px;
+    height: 250px;
+    background-size: 150px 250px;
+    background-repeat: no-repeat;
+    left: 1700px;
+    bottom: 0px;
+	margin: 0;
+}
+.house2{
+	background-image: url('house-2.png');
+    position: absolute;
+     z-index: 2; 
+    width: 150px;
+    height: 150px;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    left: 1870px;
+    bottom: 0px;
+	margin: 0;
+}
+
+
+.welcome {
+    width: 150px;
+    height: 80px;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+	transform: rotate(20deg);
+	position: absolute;
+	top:60px;
+	left:230px;
+}
+
+/* to be deleted!!!!!!!!!!!!!!!!! */
+
+
+main{
+	width: 850px;
+	margin: 35px auto;
+	
+}
+
+#modal{
+	display :none;
+}
+
+#painting{
+	display :none
+}
+
+#emotions{
+	display :none
+}
+
+
+
+
+/* start */
+
+.emotions{
+	width:90%;
+	height:600px;
+	background-color: white;
+	border: 1px solid black;
+	padding:20px;
+	position: relative;
+}
+.emotionChosen h2{
+	font-family: 'Arima Madurai', cursive;
+	color:#009688;
+	text-align: center;
+}
+
+.happy{
+	background-image: url('happy.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height:220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:110px;
+left:550px;
+}
+
+.angry{
+	background-image: url('angry.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:110px;
+left:50px;
+}
+
+.shy{
+	background-image: url('shy.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:110px;
+left:210px;
+}
+
+.scared{
+	background-image: url('scared.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:110px;
+left:380px;
+}
+
+.sleepy{
+	background-image: url('sleepy.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:350px;
+left:50px;
+}
+
+.sad{
+	background-image: url('sad.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:350px;
+left:210px;
+}
+
+.bored{
+	background-image: url('bored.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:350px;
+left:380px;
+}
+
+.surprised{
+	background-image: url('surprised.png');
+	background-size: cover;
+	float:left;
+	width: 150px;
+height: 220px;
+display: inline;
+/* margin:10px; */
+position: absolute;
+top:350px;
+left:550px;
+}
+
+
+/* bear !!!!!!!!!*/
+
+.sweet{
+	width:90%;
+	height:500px;
+	background-color: white;
+	padding:20px;
+	position: relative;
+}
+
+  .bear{
+	  height: 70%;
+	  width:60%;
+	  background-size: cover;
+	  position: absolute;
+	  bottom:0;
+	  left:150px;
+	  /* left:40%; */
+	   
+	 
+  }
+
+
+  .circle {
+	width: 500px;
+	height: 500px;
+	background: #d9ad7c;
+	border-radius: 50%;
+	border-bottom-left-radius: 100%;
+	position: relative;
+	position: absolute;
+	float: left;
+	overflow: hidden;
+	/* display: inline; */
+  }
+  .dot{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  right:80px;
+  top:50px;
+  z-index: 1;
+
+  }
+
+  .square {
+	width: 100px;
+	height: 100px;
+	background: white;
+	border:2px solid black;
+	position: relative;
+  }
+  .window1  {
+	width: 25px;
+	height: 25px;
+	background: white;
+	border:2px solid black;
+	z-index: 1;
+	position: absolute;
+	top:15px;
+	right:15px;
+  }
+  .window2  {
+	width: 25px;
+	height: 25px;
+	background: white;
+	border:2px solid black;
+	float: right;
+	z-index: 1;
+	position: absolute;
+	top:15px;
+	left:15px;
+  }
+
+  .triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid lightgray;
+	z-index: 1;
+	top:0;
+  }
+  .rectangle {
+	width: 25px;
+	height: 50px;
+	background: white;
+	border:2px solid black;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	left: 35px;
+  }
+  .coloring{
+
+	  position: relative;
+	  width:900px;
+	  height:700px ;
+	  background-color: white;
+	  padding:20px;
+  }
+  .home{
+	  /* display: inline; */
+	  position: absolute;
+	  right:100px;
+	  top:100px;
+  }
+  .canva{
+	  width:300px;
+	  height: 500px;
+	  /* border: 2px solid green; */
+	  float:right;
+	  position: relative;
+	  background-image: url('easel.png');
+	  background-size: cover;
+  }
+  
+  .painter{
+	/* display: inline; */
+	position: absolute;
+	right:250px;
+	top:250px;
+	width: 200px;
+	height: 400px;
+	z-index: 2;
+	background-image: url('character-front.png');
+	background-repeat: no-repeat;
+	background-size: 200px 350px;
+}
+
+.brushs img{
+	width:40px;
+	height: 40px;
+	/* position: absolute; */
+	align-self:left;
+}
+.starterLine{
+	font-family: 'Arima Madurai', cursive;
+	color:#009688;
+	text-align: center;
+}
+.makeIceCream{
+	font-family: 'Arima Madurai', cursive;
+	color:#009688;
+	text-align: center;	
+}
+
+  /* !!!!!!!!!!!!!!!!!! */
+
+  .blocker{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;overflow:auto;z-index:4;padding:20px;box-sizing:border-box;background-color:#000;background-color:rgba(0,0,0,0.75);text-align:center}.blocker:before{content:"";display:inline-block;height:100%;vertical-align:middle;margin-right:-0.05em}.blocker.behind{background-color:transparent}.modal{display:none;vertical-align:middle;position:relative;z-index:4;min-width:1000px;box-sizing:border-box;width:100%;background:#fff;padding:15px 30px;-webkit-border-radius:8px;-moz-border-radius:8px;-o-border-radius:8px;-ms-border-radius:8px;border-radius:8px;-webkit-box-shadow:0 0 10px #000;-moz-box-shadow:0 0 10px #000;-o-box-shadow:0 0 10px #000;-ms-box-shadow:0 0 10px #000;box-shadow:0 0 10px #000;text-align:left}.modal a.close-modal{position:absolute;top:-12.5px;right:-12.5px;display:block;width:90px;height:30px;text-indent:-9999px;background-size:contain;background-repeat:no-repeat;background-position:center center;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==')}.modal-spinner{display:none;position:fixed;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);padding:12px 16px;border-radius:5px;background-color:#111;height:20px}.modal-spinner>div{border-radius:100px;background-color:#fff;height:20px;width:2px;margin:0 1px;display:inline-block;-webkit-animation:sk-stretchdelay 1.2s infinite ease-in-out;animation:sk-stretchdelay 1.2s infinite ease-in-out}.modal-spinner .rect2{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.modal-spinner .rect3{-webkit-animation-delay:-1.0s;animation-delay:-1.0s}.modal-spinner .rect4{-webkit-animation-delay:-0.9s;animation-delay:-0.9s}@-webkit-keyframes sk-stretchdelay{0%,40%,100%{-webkit-transform:scaleY(0.5)}20%{-webkit-transform:scaleY(1.0)}}@keyframes sk-stretchdelay{0%,40%,100%{transform:scaleY(0.5);-webkit-transform:scaleY(0.5)}20%{transform:scaleY(1.0);-webkit-transform:scaleY(1.0)}}
